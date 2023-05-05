@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>git </title>
+    <title>Title</title>
 </head>
 <body>
-
+<h2>Список стран</h2>
+<ol>
+{% for item in countries_json %}
+    <li><a href="/item/{{ item.country }}">{{ item.country }}</a></li>
+{% endfor %}
+</ol>
 </body>
 </html>

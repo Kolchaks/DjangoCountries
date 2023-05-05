@@ -22,6 +22,6 @@ urlpatterns = [
     path('', views.home),
     path('about/', views.about),
     path('countries_list/', views.countries_list),
-    path('countries_list/<str: country>', views.countries_page),
-    path('languages/', views.languages),
+    # path('countries_list/<str: country>', views.countries_page),
+    # path('languages/', views.languages),
 ]
