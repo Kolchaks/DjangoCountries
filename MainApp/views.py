@@ -1,15 +1,13 @@
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponseNotFound
+import json
+from DjangoCountries import countriess.json
 
 # Create your views here.
-from django.shortcuts import render, HttpResponse
-from django.http import HttpResponseNotFound
 
 author = {
     "name": "Aleksandr",
     "surname": "Kolchak",
-    "phone": "+7 999 777 55 33",
-    "email": "ondatr@gmail.com",
 }
 
 def home(request):
@@ -24,3 +22,12 @@ def about(request):
         'author': author
     }
     return render(request, 'about.html', context)
+
+def countries_list(request):
+    pass
+
+def countries_page(request):
+    pass
+
+def languages(request):
+    pass
