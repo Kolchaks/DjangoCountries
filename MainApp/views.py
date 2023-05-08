@@ -1,5 +1,4 @@
 from django.shortcuts import render, HttpResponse
-from django.http import HttpResponseNotFound
 import json
 
 # Create your views here.
@@ -28,9 +27,9 @@ def countries_list(request):
     return render(request, 'countries-list.html', context)
 
 
-def countries_page(request):
-    pass
+def country_page(request, country):
+    # for item in countries:
+    #     if item['country'] in countries:
+    context = {'country': country}
 
-
-def languages(request):
-    pass
+    return render(request, 'country-page.html', context)
