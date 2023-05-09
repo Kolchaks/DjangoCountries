@@ -1,3 +1,5 @@
+from typing import Dict, Any
+
 from django.shortcuts import render, HttpResponse
 import json
 
@@ -28,8 +30,8 @@ def countries_list(request):
 
 
 def country_page(request, country):
-    # for item in countries:
-    #     if item['country'] in countries:
-    context = {'country': country}
+    for item in countries:
+        if item['country'] == country:
+            context = {'country': country}
 
     return render(request, 'country-page.html', context)

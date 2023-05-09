@@ -6,10 +6,14 @@
 </head>
 <body>
 
-<h2> {{ item.country }}</h2><br>
-Языки:
-    {{ item.languages }}
-<br>
+<h2> {{ country }}</h2><br>
+Языки:<br>
+    {% for language in countries.languages %}
+<ol>
+    <li>{{ language }}</li>
+</ol>
+    {% endfor %}
+
 
 <a href='/countries/'>Назад</a>
 </body>
