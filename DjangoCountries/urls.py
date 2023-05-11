@@ -20,7 +20,8 @@ from MainApp import views
 
 urlpatterns = [
     path('', views.home),
-    path('about/', views.about),
     path('countries/', views.countries_list),
     path('countries/<country>/', views.country_page),
+    path('languages/', views.list_of_languages),
+
 ]

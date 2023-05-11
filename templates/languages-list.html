@@ -6,16 +6,11 @@
 </head>
 <body>
 {% include 'menu.html' %}<br>
-<h2> {{ country }}</h2><br>
-Языки:<br>
+<h2>Список языков:</h2>
+<ol>
     {% for language in languages %}
-<ul type="square">
     <li>{{ language }}</li>
-
-</ul>
     {% endfor %}
-
-<br>
-<a href='/countries/'>Назад</a>
+</ol>
 </body>
 </html>

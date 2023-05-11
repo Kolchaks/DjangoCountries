@@ -6,8 +6,14 @@
 
 </head>
 <body>
-<h2>"Дипломный проект"</h2>
-<strong>Автор</strong>: <i>{{ name }} {{ surname }}</i>
+{% include 'menu.html' %}<br>
+<h2>"Дипломный проект"</h2><br>
+<h3>"Страны и языки"</h3><br>
+<strong>Автор</strong>:
+<br>
+<br>
+
+<i>{{ author.name }} {{ author.surname }}</i>
 
 </body>
 </html>
