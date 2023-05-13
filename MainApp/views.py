@@ -28,9 +28,10 @@ def country_page(request, country):
     for item in countries:
         if item['country'] == country:
             languages = item['languages']
-            context = {'country': country,
-                       'languages': languages,
-                       }
+            context = {
+                'country': country,
+                'languages': languages,
+                }
     return render(request, 'country-page.html', context)
 
 
