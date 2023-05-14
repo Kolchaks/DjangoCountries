@@ -6,6 +6,7 @@ class Languages(models.Model):
 
 class Countries(models.Model):
     name = models.CharField(max_length=50)
+    languages = models.ManyToManyField(to=Languages)
 
     def __repr__(self):
         return f"Country {self.name}"
