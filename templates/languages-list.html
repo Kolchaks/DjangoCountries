@@ -3,7 +3,6 @@
 {% block content %}
 
 <h2>Список языков:</h2>
-
 <ol>
     {% for language in languages %}
     <li><a href="{% url 'language-name' language.name %}">{{ language.name }}</a></li>
