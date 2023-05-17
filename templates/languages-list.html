@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% include 'menu.html' %}<br>
+{% extends 'base.html' %}
+
+{% block content %}
+
 <h2>Список языков:</h2>
 <ol>
     {% for language in languages %}
-    <li>{{ language }}</li>
+    <li><a href="/languages/{{ language.name }}">{{ language.name }}</a></li>
+
     {% endfor %}
 </ol>
-</body>
-</html>
+{% endblock %}

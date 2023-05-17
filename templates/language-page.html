@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2> {{ language }}</h2><br>
+Страны:<br>
+    {% for country in countries %}
+<ul type="square">
+    <li>{{ country.name }}</li>
+
+</ul>
+    {% endfor %}
+
+<br>
+<a href='/languages/'>Назад</a>
+{% endblock %}

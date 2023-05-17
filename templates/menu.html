@@ -23,9 +23,8 @@ ul.breadcrumb li a:hover {
 </style>
 
 <ul class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/countries/">Countries</a></li>
-<!--  <li class="breadcrumb-item"><a href="/countries/<country>">Country</a></li>-->
-  <li class="breadcrumb-item"><a href="/languages/">Languages</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'countries' %}">Countries</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'languages' %}">Languages</a></li>
 </ul>
 
