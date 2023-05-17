@@ -23,6 +23,6 @@ urlpatterns = [
     path('countries/', views.countries_list, name='countries'),
     path('countries/<country>/', views.country_page, name='country-name'),
     path('languages/', views.languages_list, name='languages'),
-    # path('languages/<language>/', views.language_page, name='language-name'),
+    path('languages/<language>/', views.language_page, name='language-name'),
 
 ]

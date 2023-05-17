@@ -9,10 +9,6 @@ author = {
 }
 
 
-# with open('countries.json', 'r') as f:
-#     countries = json.load(f)
-
-
 def home(request):
     context = {'author': author}
     return render(request, 'index.html', context)
@@ -31,21 +27,19 @@ def languages_list(request):
 
 
 def country_page(request, country):
-    country_name = Countries.objects.get(name=country)
-    languages = country_name.languages.all()
+    country = Countries.objects.get(name=country)
+    languages = country.languages.all()
     context = {
-        'country': country_name.name,
+        'country': country.name,
         'languages': languages,
     }
     return render(request, 'country-page.html', context)
 
-# def language_page(request, language):
-#     language_name = Languages.objects.get(name=language)
-#     country = Countries.objects.get(name=country)
-#     countries_ = country.languages.get(language_name)
-#
-#     context = {
-#         'language': language_name.name,
-#         'countries': countries_,
-#     }
-#     return render(request, 'language-page.html', context)
+
+def language_page(request, language):
+    countries = Countries.objects.filter(name='language')
+    context = {
+        'language': language,
+        'countries': countries,
+    }
+    return render(request, 'language-page.html', context)

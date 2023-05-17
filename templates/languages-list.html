@@ -5,7 +5,7 @@
 <h2>Список языков:</h2>
 <ol>
     {% for language in languages %}
-    <li><a href="/languages/{{ language.name }}">{{ language.name }}</a></li>
+    <li><a href="{% url 'language-name' language.name %}">{{ language.name }}</a></li>
 
     {% endfor %}
 </ol>

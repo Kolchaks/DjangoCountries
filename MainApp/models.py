@@ -5,7 +5,7 @@ class Languages(models.Model):
     name = models.CharField(max_length=30)
 
     def __repr__(self):
-        return f"Languages {self.name}"
+        return f"Countries {self.name}"
 
 
 class Countries(models.Model):

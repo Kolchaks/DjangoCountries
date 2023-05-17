@@ -4,13 +4,13 @@
 
 <h2> {{ country }}</h2><br>
 Языки:<br>
-    {% for language in languages %}
+{% for language in languages %}
 <ul type="square">
     <li>{{ language.name }}</li>
 
 </ul>
-    {% endfor %}
+{% endfor %}
 
 <br>
-<a href='/countries/'>Назад</a>
+<a href="{% url 'countries' %}">Назад</a>
 {% endblock %}

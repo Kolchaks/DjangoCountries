@@ -27,7 +27,7 @@ with open('countries.json', 'r') as f:
 #     for language in languages:
 #         print(country, language)
 
-for item in countries:
-    country = Countries.objects.get(name=item['country'])
-    for language in item['languages']:
-        country.languages.add(Languages.objects.get(name=language))
+# for item in countries:
+#     country = Countries.objects.get(name=item['country'])
+#     for language in item['languages']:
+#         country.languages.add(Languages.objects.get(name=language))
