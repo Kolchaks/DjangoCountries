@@ -1,16 +1,13 @@
 from django.db import models
 
 
-class Languages(models.Model):
+class Language(models.Model):
     name = models.CharField(max_length=30)
 
-    def __repr__(self):
-        return f"Countries {self.name}"
 
-
-class Countries(models.Model):
+class Country(models.Model):
     name = models.CharField(max_length=50)
-    languages = models.ManyToManyField(to=Languages)
+    languages = models.ManyToManyField(to=Language)
 
     def __repr__(self):
-        return f"Countries {self.name}"
+        return f"Country {self.name}"

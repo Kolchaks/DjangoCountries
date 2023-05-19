@@ -5,9 +5,9 @@
 <h2> {{ language }}</h2><br>
 
 Страны:<br>
-    {% for item in countries %}
+    {% for country in countries %}
 <ul type="square">
-    <li>{{ item }}</li>
+    <li>{{ country.name }}</li>
 </ul>
     {% endfor %}
 
