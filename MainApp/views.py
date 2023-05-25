@@ -15,8 +15,16 @@ def home(request):
 
 
 def countries_list(request):
+    alphabet = [
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    ]
     countries = Country.objects.all()
-    context = {'countries': countries}
+
+    context = {
+        'countries': countries,
+        'alphabet': alphabet,
+    }
     return render(request, 'countries-list.html', context)
 
 
@@ -43,3 +51,12 @@ def language_page(request, language):
     }
     return render(request, 'language-page.html', context)
 
+
+def countries_letter(request, letter):
+    countries = Country.objects.filter(name__startswith=letter)
+
+    context = {
+        'letter': letter,
+        'countries': countries,
+    }
+    return render(request, 'countries-letter.html', context)

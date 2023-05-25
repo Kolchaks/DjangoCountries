@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ letter }}</h2>
+
+<ol>
+    {% for country in countries %}
+        <li>{{ country.name }}</li>
+    {% endfor %}
+</ol>
+
+{% endblock %}

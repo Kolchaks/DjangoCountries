@@ -2,6 +2,13 @@
 
 {% block content %}
 
+<nav class="nav nav-pills nav-fill">
+    {% for letter in alphabet %}
+  <a class="nav-item nav-link " href="{% url 'countries-letter' letter %}">{{ letter }}</a>
+    {% endfor %}
+</nav>
+<br>
+
 <h2>Список стран</h2>
 
 <ol>

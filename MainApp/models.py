@@ -11,3 +11,5 @@ class Country(models.Model):
 
     def __repr__(self):
         return f"Country {self.name}"
+
+
