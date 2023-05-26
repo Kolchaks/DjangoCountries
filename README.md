@@ -10,7 +10,7 @@
     `source venv_name/bin/activate`
 
 4. ### Установить зависимости (библиотеки)
-    ` pip install -r requirements.txt
+     `pip install -r requirements.txt`
 
 5. ### Создать базу данных применив миграции
     `python manage.py migrate`
