@@ -2,19 +2,35 @@
 
 {% block content %}
 
-<nav class="nav nav-pills nav-fill">
-    {% for letter in alphabet %}
-  <a class="nav-item nav-link " href="{% url 'countries-letter' letter %}">{{ letter }}</a>
-    {% endfor %}
+<nav class="navbar" style="background-color: #e3f2fd;">
+    <ul>
+        {% for letter in alphabet %}
+        <a class="nav-item nav-link " href="{% url 'countries-letter' letter %}">{{ letter }}</a>
+        {% endfor %}
+    </ul>
 </nav>
 <br>
 
-<h2>Список стран</h2>
+    <h2>Список стран</h2>
 
-<ol>
-    {% for country in countries %}
+    <ol>
+        {% for country in page_obj %}
         <li><a href="{% url 'country-name' country.name %}">{{ country.name }}</a></li>
-    {% endfor %}
-</ol>
+        {% endfor %}
+    </ol>
+<br>
+
+
+<nav class="navbar" style="background-color: #e3f2fd;">
+    Страница:
+    <ul>
+        {% for page in page_obj.paginator.page_range %}
+        <li style="display: inline;">
+
+            <a href="?page={{ page }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
 
 {% endblock %}

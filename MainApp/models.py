@@ -12,4 +12,8 @@ class Country(models.Model):
     def __repr__(self):
         return f"Country {self.name}"
 
+    def __str__(self):
+        return f"{self.name}"
 
+    # def __getitem__(self, key):
+    #     return f"{self.name[key]}"

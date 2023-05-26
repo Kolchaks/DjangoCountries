@@ -1,7 +1,9 @@
-from typing import Dict, Any
 from django.shortcuts import render, HttpResponse
-import json
+from django.http import HttpResponseNotFound
 from MainApp.models import Country, Language
+from typing import Dict, Any
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.paginator import Paginator
 
 author = {
     "name": "Aleksandr",
@@ -20,17 +22,20 @@ def countries_list(request):
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     ]
     countries = Country.objects.all()
+    paginator = Paginator(countries, 10)
 
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
-        'countries': countries,
         'alphabet': alphabet,
+        'page_obj': page_obj,
     }
     return render(request, 'countries-list.html', context)
 
 
 def languages_list(request):
     languages = Language.objects.all()
-    context = {'languages': languages}
+    context = { 'languages': languages,}
     return render(request, 'languages-list.html', context)
 
 
