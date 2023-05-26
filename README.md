@@ -10,8 +10,7 @@
     `source venv_name/bin/activate`
 
 4. ### Установить зависимости (библиотеки)
-    `pip install django`   (version 4.2)
-    `pip install django-extensions` 
+    ` pip install -r requirements.txt
 
 5. ### Создать базу данных применив миграции
     `python manage.py migrate`
